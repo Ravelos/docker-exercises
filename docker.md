@@ -1,45 +1,108 @@
 # docker-exercises
 # Docker commands:
 
-``` docker create [options] “image” ``` Cria um container a partir da imagem.
+- Cria um container a partir da imagem.
+``` 
+docker create [options] “image”
+``` 
 
-- `docker ps`: Contenedores que estão em execução.
+- Contenedores que estão em execução.
+```
+docker ps
+``` 
   
-- `docker ps -a`: Lista de todos os container.
+- Lista de todos os container.
+```
+docker ps -a
+``` 
   
-- `docker rm "container_id"`: Remover container.
+- Remover container.
+```
+docker rm "container_id"
+```
+  
+- Remover container.
+```
+docker rm "container_name"
+```
 
-- `docker rm "container_name"`: Remover container.
+- Subir um container.
+```
+docker start "container_name"
+```
 
-- `docker start "container_name"`: Subir um container.
+- Parar um container.
+```
+docker stop "container_name"
+``` 
 
-- `docker stop "container_name"`: Parar um container.
+- Exibe os processos rodando em um container.
+```
+docker top
+```
 
-- `docker top`: Exibe os processos rodando em um container.
+- Reinicia um container que está em pause.
+```
+docker restart "container_name"
+``` 
 
-- `docker restart "container_name"`: Reinicia um container que está em pause.
+- Da Poweroff no container.
+```
+docker kill "container_name"
+``` 
 
-- `docker kill "container_name"`: Da Poweroff no container.
+- Pausa o container.
+```
+docker pause "container_name"
+``` 
 
-- `docker pause "container_name"`: Pausa o container.
+- Inicia um container que está rodando ou parado.
+```
+docker unpause "container_name"
+``` 
 
-- `docker unpause "container_name"`: Inicia um container que está rodando ou parado.
+- Executa instrução dentro do container que está rodando sem precisar ‘atachar’.
+```
+docker exec [options] "container_name"
+``` 
 
-- `docker exec [options] "container_name"`: Executa instrução dentro do container que está rodando sem precisar ‘atachar’.
+- Acesso ao container para alterações.
+```
+docker attach "container_name"
+``` 
 
-- `docker attach "container_name"`: Acesso ao container para alterações.
+- Aguarda o retorno da execução de um container para iniciar esse container.
+```
+docker wait "container_name"
+```
 
-- `docker wait "container_name"`: Aguarda o retorno da execução de um container para iniciar esse container.
+- Copia arquivos ou diretórios do container para o host.
+```
+docker cp "src_path" "container_name":"dest_path"
+``` 
 
-- `docker cp "src_path" "container_name":"dest_path"`: Copia arquivos ou diretórios do container para o host.
+- Exibe as alterações feitas no filesystem do container.
+```
+docker diff "container_name"
+``` 
 
-- `docker diff "container_name"`: Exibe as alterações feitas no filesystem do container.
+- Exibe os eventos do container em tempo real.
+```
+docker events
+``` 
 
-- `docker events`: Exibe os eventos do container em tempo real.
+- Exibe o histórico de comandos executados dentro do container.
+```
+docker history "image"
+``` 
 
-- `docker history "image"`: Exibe o histórico de comandos executados dentro do container.
+- Exibe o json com todas as configurações do container.
+```
+docker inspect --type "container_name"
+```
 
-- `docker inspect --type "container_name"`: Exibe o json com todas as configurações do container.
-
-- `docker rename "container_name" "new_container_name"`: Renomeia um container existente.
+- Renomeia um container existente.
+```
+docker rename "container_name" "new_container_name"
+``` 
 
